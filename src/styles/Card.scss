@@ -1,0 +1,32 @@
+@import "./App.scss";
+
+.card {
+  margin: auto 0px;
+  margin-top: 175px;
+  width: 360px;
+  height: 400px;
+  text-align: center;
+}
+
+//card-front formatting
+.card-front {
+  .image {
+    width: 360px;
+    height: 400px;
+  }
+}
+
+//card-back formatting
+.card-back {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    font-size: 50px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+}
