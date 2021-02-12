@@ -3,6 +3,7 @@ import Deck from './components/Deck.js';
 import './styles/App.scss';
 import elephant from './works/elephant.png';
 import piggy from './works/piggy.png';
+import bricks from './works/bricks.png';
 
 function App() {
 
@@ -27,7 +28,8 @@ function App() {
 
   const cardsArray = [
     objectFactory(elephant, 'elephant', '12.18.20', 'blank desc', true, 12, 0, true, 39, 20, 0, true, 99, false),
-    objectFactory(piggy, 'piggy', '08.30.20', 'blank desc', true, 12, true, 0, 39, 20, 0, false, 0, false)
+    objectFactory(piggy, 'piggy', '08.30.20', 'blank desc', true, 12, 0, true, 39, 20, 0, false, 0, false),
+    objectFactory(bricks, 'brickwaves', '06.30.18', 'blank desc', true, 8, 0, false, 0, 0, 0, false, 0, false)
   ]
 
   return (

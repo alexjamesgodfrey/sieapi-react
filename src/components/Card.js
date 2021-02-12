@@ -34,7 +34,7 @@ const Card = (props) => {
                     <DropdownButton id="drop" variant="info" title={type}>
                         {props.hasPrint ? <Dropdown.Item as="button" onClick={() => setType('print')}>print</Dropdown.Item> : <Dropdown.ItemText>print sold out</Dropdown.ItemText>}
                         {props.hasSignedPrint ? <Dropdown.Item as="button" onClick={() => setType('signed print')}>signed print</Dropdown.Item> : <Dropdown.ItemText>signed print s/o</Dropdown.ItemText>}
-                        <Dropdown.Item as="button" onClick={() => setType('original')}>original</Dropdown.Item>
+                        {props.hasOriginal ? <Dropdown.Item as="button" onClick={() => setType('original')}>original</Dropdown.Item> : <Dropdown.ItemText>original s/o</Dropdown.ItemText>}
                     </DropdownButton>
                 </div>
             <h3 className="date">{props.date}</h3>
