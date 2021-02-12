@@ -1,37 +1,41 @@
 import react from 'react';
-import Card from './components/Card.js'
+import Deck from './components/Deck.js';
 import './styles/App.scss';
 import elephant from './works/elephant.png';
+import piggy from './works/piggy.png';
 
 function App() {
-  const cardsArray = [
-    {
-      image: elephant,
-      color: '#8ee6ce',
-      title: 'about me',
-      date: '12.25.20',
-      description: 'lorem ipsum si dip amet'
-    }
-  ]
 
+  const objectFactory = ( image, title, date, description, hasPrint, printPrice, soldPrint, hasSignedPrint, signedPrintPrice, totalSignedPrint, soldSignedPrint, hasOriginal, originalPrice, soldOriginal ) => {
+    return {
+      image: image,
+      title: title,
+      date: date,
+      description: description,
+      hasPrint: hasPrint,
+      printPrice: printPrice,
+      soldPrint: soldPrint,
+      hasSignedPrint: hasSignedPrint,
+      signedPrintPrice: signedPrintPrice,
+      totalSignedPrint: totalSignedPrint,
+      soldSignedPrint: soldSignedPrint,
+      hasOriginal: hasOriginal,
+      originalPrice: originalPrice,
+      soldOriginal: soldOriginal
+    }
+  }
+
+  const cardsArray = [
+    objectFactory(elephant, 'elephant', '12.18.20', 'blank desc', true, 12, 0, true, 39, 20, 0, true, 99, false),
+    objectFactory(piggy, 'piggy', '08.30.20', 'blank desc', true, 12, true, 0, 39, 20, 0, false, 0, false)
+  ]
 
   return (
     <div className="main">
-      {
-        cardsArray.map((card, key) => {
-          return <Card
-            id={key}
-            image={card.image}
-            color={card.color}
-            title={card.title}
-            date={card.date}
-            description={card.description}
-            />
-          }
-        )
-      }
+      <Deck arr={cardsArray}/>
     </div>
   );
+
 }
 
 export default App;

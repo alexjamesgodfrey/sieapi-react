@@ -1,32 +1,35 @@
 @import "./App.scss";
 
-.card {
-  margin: auto 0px;
-  margin-top: 175px;
+.test {
   width: 360px;
-  height: 400px;
-  text-align: center;
+  height: 600px;
 }
 
-//card-front formatting
-.card-front {
-  .image {
-    width: 360px;
-    height: 400px;
-  }
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
 }
 
-//card-back formatting
-.card-back {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
+#drop {
+  margin-top: 7px;
+  margin-left: 10px;
+  color: white !important;
+}
 
-  h1 {
-    font-size: 50px;
-  }
+.title-area {
+  display: flex;
+}
 
-  h3 {
-    font-size: 28px;
-  }
+h1 {
+  font-size: 1000px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+#buy-button:hover {
+  color: white !important;
 }
