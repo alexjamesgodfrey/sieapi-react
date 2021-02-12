@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import react from 'react';
+import Card from './components/Card.js'
+import './styles/App.scss';
 
 function App() {
+  const cardsArray = [
+    {
+      id: 0,
+      title: 'about me',
+      date: '12.25.20',
+      description: 'lorem ipsum si dip amet',
+      color: '#8ee6ce'
+    }
+  ]
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+      {
+        cardsArray.map((card) => {
+          return <Card
+            id={card.id}
+            title={card.title}
+            date={card.date}
+            description={card.description}
+            color={card.color}
+            />
+          }
+        )
+      }
     </div>
   );
 }
