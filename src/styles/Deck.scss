@@ -1,7 +1,30 @@
+$barrier: 728px;
+
 .main-container {
   margin-top: 50px;
   width: 100%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.info-toast {
+  @media screen and (max-width: $barrier) {
+    height: 200px;
+    margin-top: 10px;
+    margin-right: 10px;
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  @media screen and (min-width: $barrier) {
+    height: 200px;
+    margin-top: 10px;
+    margin-right: 10px;
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
