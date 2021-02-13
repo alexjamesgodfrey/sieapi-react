@@ -8,8 +8,11 @@
 # testing
 /coverage
 
-# production
-/build
+#firebase
+/.firebase
+/.github\workflows
+.firebaserc
+firebase.json
 
 # misc
 .DS_Store
