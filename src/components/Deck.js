@@ -35,7 +35,7 @@ const Deck = (array) => {
                 </Toast.Header>
                 <Toast.Body>a warm welcome from sierra. click on or hover over a piece to view its medium, 
                     materials used, and other info.
-                    use the dropdown to select either, print, signed print, or original. 
+                    use the dropdown to select either print, signed print, or original. 
                     click buy to become a patron.
                 </Toast.Body>
             </Toast>
