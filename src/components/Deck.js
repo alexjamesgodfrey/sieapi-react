@@ -31,7 +31,7 @@ const Deck = (array) => {
             <Toast className="info-toast">
                 <Toast.Header>
                     <strong className="mr-auto">info</strong>
-                    <small>{minutes} minutes ago</small>
+                    {minutes > 1 ? <small>{minutes} minutes ago</small> : <small>just now</small>}
                 </Toast.Header>
                 <Toast.Body>a warm welcome from sierra. click on or hover over a piece to view its medium, 
                     materials used, and other info.
