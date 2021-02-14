@@ -1,16 +1,29 @@
 @import "./App.scss";
 
-.test {
+.total-container {
   padding: 20px;
   width: 360px;
   height: 600;
 }
 
-.image {
-  max-width: 100%;
-  max-height: 100%;
-  box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
-  pointer-events: none;
+.image-container {
+  .image {
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+  }
+}
+
+.body-container {
+  position: relative;
+  top: -180px;
+}
+
+.body-container-up {
+  z-index: -10;
+  position: relative;
+  top: -180px;
 }
 
 #drop {
