@@ -43,6 +43,7 @@ const Card = (props) => {
             setBody(true);
             setTapped(true);
         } else {
+            setTapped(false);
             setBody(false);
         }
     }
