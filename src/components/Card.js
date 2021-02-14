@@ -8,6 +8,7 @@ import '../styles/Card.scss';
 
 const Card = (props) => {
     const [body, setBody] = useState(false);
+    const [tapped, setTapped] = useState(false);
 
     const [type, setType] = useState(() => {
         if (props.hasPrint) {
@@ -28,7 +29,24 @@ const Card = (props) => {
         }
     }
 
-    const bodyFunc = () => opppositeBody();
+    const hoverSpecial = () => {
+        if (tapped === false) {
+            setBody(false);
+        } else {
+            return null;
+        }
+    }
+    const hoverFunc = () => hoverSpecial();
+
+    const touchSpecial = () => {
+        if (tapped === false) {
+            setBody(true);
+            setTapped(true);
+        } else {
+            setBody(false);
+        }
+    }
+    const touchFunc = () => touchSpecial();
     
     useEffect(() => {
     })
@@ -36,7 +54,7 @@ const Card = (props) => {
     return (
         <AnimateSharedLayout>
             <animated.div style={fade} className="total-container">
-                <motion.div onHoverStart={() => setBody(true)} onTap={() => setBody(!body)} className="image-container">
+                <motion.div onHoverStart={() => setBody(true)} onHoverEnd={hoverFunc} onTap={touchFunc} className="image-container">
                     <img className="image" src={props.image} />
                 </motion.div>
                 
