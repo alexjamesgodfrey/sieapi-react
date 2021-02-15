@@ -27,6 +27,7 @@ const PayPal = (props) => {
             },
             onApprove: async (data, actions) => {
                 const order = await actions.order.capture();
+                setInProgess(false);
                 setApproved(true);
                 console.log(order);
             },
@@ -49,8 +50,8 @@ const PayPal = (props) => {
         )
     }
     return (
-        <div>
-            <div ref={paypal} onClick={() => setInProgess(true)}></div>
+        <div onClick={() => setInProgess(true)}>
+            <div ref={paypal}></div>
         </div>
     )
 }
