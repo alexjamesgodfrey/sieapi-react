@@ -125,7 +125,7 @@ const Card = (props) => {
                     {type === 'signed print' ? <Modal.Title>{props.title} - ${props.signedPrintPrice} </Modal.Title> : <span></span>} 
                     {type === 'original' ? <Modal.Title>{props.title} - ${props.originalPrice} </Modal.Title> : <span></span>} 
                 </Modal.Header>
-                    <Modal.Body><PayPal price={payPalPrice} /></Modal.Body>
+                    <Modal.Body><PayPal price={payPalPrice} title={props.title} type={type} /></Modal.Body>
                 <Modal.Footer>
                     <Button variant="danger" onClick={hideMod}>
                         cancel
