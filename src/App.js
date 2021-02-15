@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import Deck from './components/Deck.js';
 import './styles/App.scss';
 import elephant from './works/elephant.png';
