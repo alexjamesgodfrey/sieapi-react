@@ -1,4 +1,4 @@
-import react, { useEffect, useState, useRef } from 'react';
+import { useState } from 'react';
 import PayPal from './PayPal.js'
 import { useSpring, animated } from 'react-spring';
 import { motion } from "framer-motion";
