@@ -10,7 +10,7 @@ $barrier: 728px;
 
 .info-toast {
   @media screen and (max-width: $barrier) {
-    height: 170px;
+    height: 130px;
     margin-top: 10px;
     margin-right: 10px;
     z-index: 5;
@@ -19,7 +19,7 @@ $barrier: 728px;
     right: 0;
   }
   @media screen and (min-width: $barrier) {
-    height: 170px;
+    height: 130pxpx;
     margin-top: 10px;
     margin-right: 10px;
     z-index: 5;
