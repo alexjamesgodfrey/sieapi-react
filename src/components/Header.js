@@ -10,6 +10,9 @@ const Header = () =>  {
                 <Nav.Link eventKey="/home">shop</Nav.Link>
             </Nav.Item>
             <Nav.Item>
+                <Nav.Link eventKey="disabled" disabled>commission</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
                 <Nav.Link eventKey="disabled" disabled>blog</Nav.Link>
             </Nav.Item>
             <Nav.Item>
