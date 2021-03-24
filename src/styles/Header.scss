@@ -1,11 +1,23 @@
+$barrier: 850px;
+
 #flex-column {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 25px;
-    left: 10px;
+    padding-top: 20px;
+
+    @media screen and (min-width: $barrier) {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 25px;
+        left: 10px;
+    }
+    
 }
 
 .header-container {
-    width: 70px;
+    width: 100px;
+    min-width: 100px;
+
+    @media screen and (max-width: $barrier) {
+        width: 100%;
+    }
 }

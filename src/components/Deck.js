@@ -29,6 +29,7 @@ const Deck = (array) => {
 
 
     return (
+        <div>
         <div className="main-container">
             <Toast show={toast} onClose={toggleToast} className="info-toast">
                 <Toast.Header>
@@ -64,6 +65,8 @@ const Deck = (array) => {
                 )
             }
            
+        </div>
+        <p className='footer'>© 2021 Godfrey Corp.</p>
         </div>
         
     )

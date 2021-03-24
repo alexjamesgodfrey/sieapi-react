@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './components/Header.js';
-import Footer from './components/Footer.js';
 import Deck from './components/Deck.js';
 import './styles/App.scss';
 import elephant from './works/elephant.png';
@@ -40,7 +39,6 @@ function App() {
         <Header />
         <Deck arr={cardsArray}/>
       </div>
-      <Footer />
     </div>
   );
 

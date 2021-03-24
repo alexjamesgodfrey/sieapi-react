@@ -12,6 +12,7 @@ const Card = (props) => {
     //state for showing description
     const [body, setBody] = useState(false);
     const [tapped, setTapped] = useState(false);
+    const [loaded, setLoaded] = useState(false);
 
     //state for showing paypal modal
     const [showModal, setShowModal] = useState(false);
@@ -71,8 +72,9 @@ const Card = (props) => {
         <animated.div style={fade} className="total-container">
             
             <motion.div onHoverStart={() => setBody(true)} onHoverEnd={hoverFunc} className="image-container">
+                
                 <motion.div onTap={touchFunc}>
-                    <img className="image" src={props.image} />
+                    <img className="image" src={props.image} onLoad={() => setLoaded(true)} />
                 </motion.div>
             
             {body ? 

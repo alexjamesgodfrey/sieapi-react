@@ -5,9 +5,9 @@ const Header = () =>  {
     
     return (
         <div className="header-container">
-        <Nav id="flex-column">
+        <Nav className="justify-content-center" id="flex-column">
             <Nav.Item>
-                <Nav.Link eventKey="/home">shop</Nav.Link>
+                <Nav.Link eventKey="/home">works</Nav.Link>
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link eventKey="disabled" disabled>commission</Nav.Link>

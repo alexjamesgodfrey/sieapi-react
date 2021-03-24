@@ -13,8 +13,17 @@ $barrier: 850px;
   color: $primary-color;
 }
 
+.total {
+  display: flex;
+  flex-direction: column;
+}
+
 .main {
   display: flex;
   justify-content: center;
   height: 100vh;
+
+  @media screen and (max-width: $barrier) {
+    display: inline;
+  }
 }
