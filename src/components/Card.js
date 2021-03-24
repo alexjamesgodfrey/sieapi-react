@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PayPal from './PayPal.js'
+import OnImagesLoaded from 'react-on-images-loaded';
 import Spinner from 'react-bootstrap/Spinner'
 import { useSpring, animated } from 'react-spring';
 import { motion } from "framer-motion";
@@ -70,12 +71,15 @@ const Card = (props) => {
     const touchFunc = () => touchSpecial();
 
     return (
+        <OnImagesLoaded
+            onLoaded={() => setLoaded(true)}
+        >
         <animated.div style={fade} className="total-container">
             
             <motion.div onHoverStart={() => setBody(true)} onHoverEnd={hoverFunc} className="image-container">
                 
                 <motion.div onTap={touchFunc}>
-                    {loaded ? <img className="image" src={props.image} onLoad={() => setLoaded(true)} /> : <Spinner animation="border" variant="outline-info" />}
+                    {loaded ? <img className="image" src={props.image} /> : <Spinner animation="border" variant="outline-info" />}
                 </motion.div>
              
             {(body && loaded) ? 
@@ -120,7 +124,7 @@ const Card = (props) => {
                 
             </motion.div>
         </animated.div>
-        
+        </OnImagesLoaded>
     )
 }
 
