@@ -75,7 +75,7 @@ const Card = (props) => {
             <motion.div onHoverStart={() => setBody(true)} onHoverEnd={hoverFunc} className="image-container">
                 
                 <motion.div onTap={touchFunc}>
-                    <img className="image" src={props.image} onLoad={() => setLoaded(true)} />
+                    {loaded ? <img className="image" src={props.image} onLoad={() => setLoaded(true)} /> : <Spinner animation="border" variant="outline-info" />}
                 </motion.div>
              
             {(body && loaded) ? 
@@ -101,9 +101,7 @@ const Card = (props) => {
 
                 : 
 
-                <div animate={{ y: 0 }} className="body-container-up">
-                    <Spinner animation="border" variant="danger" />
-                </div>
+                <span></span>
             }
 
             <Modal show={showModal} onHide={hideMod}>
