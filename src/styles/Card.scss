@@ -1,9 +1,14 @@
 @import "./App.scss";
+$barrier: 850px;
 
 .total-container {
-  padding: 20px;
+  padding: 10px 20px 20px 20px;
   width: 360px;
-  height: 600;
+
+  @media screen and (min-width: $barrier) {
+    height: 600px;
+  }
+  
 }
 
 .image-container {
