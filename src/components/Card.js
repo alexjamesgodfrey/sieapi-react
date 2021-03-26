@@ -79,7 +79,7 @@ const Card = (props) => {
             <motion.div onHoverStart={() => setBody(true)} onHoverEnd={hoverFunc} className="image-container">
                 
                 <motion.div onTap={touchFunc}>
-                    {loaded ? <img className="image" src={props.image} /> : <Spinner animation="border" variant="outline-info" />}
+                    {loaded ? <img className="image" src={props.image} alt="reload this page to load the image"/> : <Spinner animation="border" variant="outline-info" />}
                 </motion.div>
              
             {(body && loaded) ? 
