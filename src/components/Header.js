@@ -1,4 +1,6 @@
 import Nav from 'react-bootstrap/Nav';
+import {Link} from "react-router-dom";
+
 import '../styles/Header.scss';
 
 const Header = () =>  {
@@ -6,17 +8,17 @@ const Header = () =>  {
     return (
         <div className="header-container">
         <Nav className="justify-content-center" id="flex-column">
-            <Nav.Item>
-                <Nav.Link eventKey="/home">works</Nav.Link>
+            <Nav.Item as="li">
+                <Link to="/"><Nav.Link eventKey="/">works</Nav.Link></Link>
             </Nav.Item>
-            <Nav.Item>
-                <Nav.Link eventKey="disabled" disabled>commission</Nav.Link>
+            <Nav.Item as="li">
+                <Link to="/commission"><Nav.Link href="/commission">commission</Nav.Link></Link>
             </Nav.Item>
-            <Nav.Item>
-                <Nav.Link eventKey="disabled" disabled>blog</Nav.Link>
+            <Nav.Item as="li">
+            <Link to="/blog"><Nav.Link href="/blog">blog</Nav.Link></Link>
             </Nav.Item>
-            <Nav.Item>
-                <Nav.Link eventKey="disabled" disabled>about</Nav.Link>
+            <Nav.Item as="li">
+                <Link to="/about"><Nav.Link href="/about">about</Nav.Link></Link>
             </Nav.Item>
         </Nav>
         </div>

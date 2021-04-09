@@ -27,6 +27,10 @@ const Deck = (array) => {
                         originalPrice={card.originalPrice}
                         solOriginal={card.soldOriginal}
                         price={card.price}
+                        isParent={card.isParent}
+                        isChild={card.isChild}
+                        width={card.width}
+                        childArray={card.childArray}
                         />
                     }
                 )

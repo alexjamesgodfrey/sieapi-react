@@ -11,10 +11,27 @@ $barrier: 850px;
   
 }
 
+.parent-container {
+  padding: 10px 20px 20px 20px;
+  width: 80%;
+  min-width: 360px;
+  max-width: 850px;
+  margin: 0px auto;
+
+  @media screen and (min-width: $barrier) {
+    height: 600px;
+  }
+  
+}
+
 .image-container {
   .image {
     max-width: 100%;
     max-height: 100%;
+    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+  }
+  .mother {
     box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
     pointer-events: none;
   }
