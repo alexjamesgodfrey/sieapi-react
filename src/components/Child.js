@@ -79,7 +79,7 @@ const Child = props => {
         <OnImagesLoaded
             onLoaded={() => setLoaded(true)}
         >
-        <animated.div style={fade} className="total-container">
+        <animated.div style={fade} className="child-container">
             
             <motion.div onHoverStart={() => setBody(true)} onHoverEnd={hoverFunc} className="image-container">
                 
