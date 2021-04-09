@@ -39,12 +39,12 @@ const Home = () => {
     }
     
     const motherArray = [
-    objectFactory(mother1, 'mother1', '04.02.21', 'blank desc', false, 0, 0, false, 0, 0, 0, true, 15, false, false, true),
-    objectFactory(mother2, 'mother2', '04.04.21', 'blank desc', false, 0, 0, false, 0, 0, 0, true, 15, false, false, true),
-    objectFactory(mother3, 'mother3', '04.04.21', 'blank desc', false, 0, 0, false, 0, 0, 0, true, 15, false, false, true),
-    objectFactory(mother4, 'mother4', '04.05.21', 'blank desc', false, 0, 0, false, 0, 0, 0, true, 15, false, false, true),
-    objectFactory(mother5, 'mother5', '04.07.21', 'blank desc', false, 0, 0, false, 0, 0, 0, true, 15, false, false, true),
-    objectFactory(mother6, 'mother6', '04.07.21', 'blank desc', false, 0, 0, false, 0, 0, 0, true, 15, false, false, true)
+    objectFactory(mother1, 'bluebells', '04.02.21', 'blank desc', false, 0, 0, false, 0, 0, 0, true, 15, false, false, true),
+    objectFactory(mother2, 'roses', '04.04.21', 'blank desc', false, 0, 0, false, 0, 0, 0, true, 15, false, false, true),
+    objectFactory(mother3, 'carnation', '04.04.21', 'blank desc', false, 0, 0, false, 0, 0, 0, true, 15, false, false, true),
+    objectFactory(mother4, 'motley', '04.05.21', 'blank desc', false, 0, 0, false, 0, 0, 0, true, 15, false, false, true),
+    objectFactory(mother5, 'lilac', '04.07.21', 'blank desc', false, 0, 0, false, 0, 0, 0, true, 15, false, false, true),
+    objectFactory(mother6, 'blue orchid', '04.07.21', 'blank desc', false, 0, 0, false, 0, 0, 0, true, 15, false, false, true)
     ]
 
     const cardsArray = [
