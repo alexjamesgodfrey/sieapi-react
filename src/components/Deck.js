@@ -5,8 +5,7 @@ const Deck = (array) => {
 
     return (
         <div>
-
-        
+            <h1>aspen by sierra apicella</h1>
         <div className="main-container">
             {
                 array.arr.map((card, key) => {

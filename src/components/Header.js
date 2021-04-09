@@ -9,7 +9,7 @@ const Header = () =>  {
         <div className="header-container">
         <Nav className="justify-content-center" id="flex-column">
             <Nav.Item as="li">
-                <Link to="/"><Nav.Link eventKey="/">works</Nav.Link></Link>
+                <Link to="/"><Nav.Link href="/">works</Nav.Link></Link>
             </Nav.Item>
             <Nav.Item as="li">
                 <Link to="/commission"><Nav.Link href="/commission">commission</Nav.Link></Link>

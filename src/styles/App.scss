@@ -23,6 +23,10 @@ $barrier: 850px;
   justify-content: center;
   height: 100vh;
 
+  h1 {
+    text-emphasis: center;
+  }
+
   @media screen and (max-width: $barrier) {
     display: inline;
   }
