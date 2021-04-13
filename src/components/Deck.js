@@ -1,4 +1,5 @@
 import Card from './Card.js';
+import Footer from './Footer.js';
 import '../styles/Deck.scss';
 
 const Deck = (array) => {
@@ -35,9 +36,8 @@ const Deck = (array) => {
                 )
             }
         </div>
-        <p className='footer'>© 2021 Godfrey Corp.</p>
+        <Footer />
         </div>
-        
     )
 
 }

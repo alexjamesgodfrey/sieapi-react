@@ -8,8 +8,6 @@ import './styles/App.scss';
 
 function App() {
 
-  
-
   return (
     <Router>
       <Switch>
@@ -26,8 +24,7 @@ function App() {
           <Home />
         </Route>
       </Switch>
-    </Router>
-    
+    </Router>  
   );
 
 }
