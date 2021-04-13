@@ -1,4 +1,10 @@
+$barrier: 850px;
+
 .about {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     h1 {
         margin-top: 10px;
         text-align: center;
@@ -6,5 +12,23 @@
     p {
         font-size: 25px;
         text-align: center;
+    }
+
+    @media screen and (min-width: $barrier) {
+        margin-left: 50px;
+      }
+}
+
+.FAQ {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    h5 {
+        text-align: center;
+    }
+    p {
+        font-size: 16px;
+        margin-left: 20px;
+        text-align: left;
     }
 }
