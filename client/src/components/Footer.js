@@ -3,7 +3,7 @@ import "../styles/Footer.scss";
 
 const Footer = () => {
     return (
-        <p className='footer'>want to showcase or sell your art like this? visit <Link className="footer-link" to="/about">about</Link></p>
+        <p className='footer'>log in as <Link className="footer-link" to="/admin">admin</Link></p>
     )
 }
 

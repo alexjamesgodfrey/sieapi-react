@@ -98,14 +98,8 @@ const Child = props => {
                         </DropdownButton>
                     </div>
                     <h3 className="date">{props.date}</h3>
-
-                    {type === 'print' ? <h6 className="description">{props.soldPrint} / ∞ sold</h6> : <span></span>}
-                    {type === 'signed print' ? <h6 className="description">{props.soldSignedPrint} / 20 sold</h6> : <span></span>}
-                    {type === 'original' ? <h6 className="description">0 / 1 sold</h6> : <span></span>}
-
-                    {type === 'print' ? <Button id="buy-button" variant="outline-info" size="md" onClick={showMod}>buy ${props.printPrice}</Button> : <span></span>}
-                    {type === 'signed print' ? <Button id="buy-button" variant="outline-info" size="md" onClick={showMod}>buy ${props.signedPrintPrice}</Button> : <span></span>}
-                    {type === 'original' ? <Button id="buy-button" variant="outline-info" size="md" onClick={showMod}>buy ${props.originalPrice}</Button> : <span></span>}
+                    <h6 className="description">0 / 1 sold</h6>
+                    <Button id="buy-button" variant="outline-info" size="md" onClick={showMod}>buy ${props.price}</Button>
                 </motion.div>
 
                 : 
@@ -115,9 +109,7 @@ const Child = props => {
 
             <Modal show={showModal} onHide={hideMod}>
                 <Modal.Header closeButton>
-                    {type === 'print' ? <Modal.Title>{props.title} - ${props.printPrice} - first class mail</Modal.Title> : <span></span>} 
-                    {type === 'signed print' ? <Modal.Title>{props.title} - ${props.signedPrintPrice} - first class mail</Modal.Title> : <span></span>} 
-                    {type === 'original' ? <Modal.Title>{props.title} - ${props.originalPrice} - first class mail</Modal.Title> : <span></span>} 
+                    <Modal.Title>{props.title} - ${props.price} - first class mail</Modal.Title>
                 </Modal.Header>
                     <Modal.Body><PayPal price={payPalPrice} title={props.title} type={type} /></Modal.Body>
                 <Modal.Footer>

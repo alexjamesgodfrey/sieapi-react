@@ -16,20 +16,9 @@ const Deck = (array) => {
                         title={card.title}
                         date={card.date}
                         description={card.description}
-                        hasPrint={card.hasPrint}
-                        printPrice={card.printPrice}
-                        soldPrint={card.soldPrint}
-                        hasSignedPrint={card.hasSignedPrint}
-                        signedPrintPrice={card.signedPrintPrice}
-                        totalSignedPrint={card.totalSignedPrint}
-                        soldSignedPrint={card.soldSignedPrint}
-                        hasOriginal={card.hasOriginal}
-                        originalPrice={card.originalPrice}
-                        solOriginal={card.soldOriginal}
                         price={card.price}
                         isParent={card.isParent}
                         isChild={card.isChild}
-                        width={card.width}
                         childArray={card.childArray}
                         />
                     }

@@ -8,7 +8,6 @@ $barrier: 850px;
   @media screen and (min-width: $barrier) {
     height: 600px;
   }
-  
 }
 
 .parent-container {
@@ -21,20 +20,18 @@ $barrier: 850px;
   @media screen and (min-width: $barrier) {
     height: 600px;
   }
-  
 }
 
 .child-container {
   padding: 10px 20px 20px 20px;
-  width: 360px;
-  height: 550px;
+  max-width: 360px;
+  max-height: 550px;
   margin: 0px auto;
 
   @media screen and (max-width: $barrier) {
     height: inherit;
     max-height: 500px;
   }
-  
 }
 
 .image-container {
