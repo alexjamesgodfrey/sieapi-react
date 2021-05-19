@@ -27,4 +27,15 @@ module.exports = function (app) {
         }
     })
 
+    app.delete('/api/deletework/:id', async (req, res) => {
+        try {
+            const { id } = req.params;
+            const resp = await pool.query("DELETE FROM sierra where id=$1",
+                [id]);
+            res.json(resp);
+        } catch (err) {
+            console.error(err.message)
+        }
+    })
+
 }
