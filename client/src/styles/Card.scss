@@ -4,10 +4,6 @@ $barrier: 850px;
 .total-container {
   padding: 10px 20px 20px 20px;
   width: 360px;
-
-  @media screen and (min-width: $barrier) {
-    height: 600px;
-  }
 }
 
 .parent-container {

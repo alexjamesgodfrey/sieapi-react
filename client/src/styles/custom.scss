@@ -3,7 +3,7 @@ $font-color: #ffc0cb;
 
 $theme-colors: (
   "info": $primary-color,
-  "warning": $font-color
+  "warning": $font-color,
 );
 
 @import "~bootstrap/scss/bootstrap";

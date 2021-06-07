@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Child from './Child.js';
 import PayPal from './PayPal.js'
-import OnImagesLoaded from 'react-on-images-loaded';
 import Spinner from 'react-bootstrap/Spinner'
 import { useSpring, animated } from 'react-spring';
 import { motion } from "framer-motion";
@@ -16,6 +15,7 @@ const Card = (props) => {
     const [body, setBody] = useState(false);
     const [tapped, setTapped] = useState(false);
     const [loaded, setLoaded] = useState(false);
+    const [font, setFont] = useState(38 + ((10 - props.title.length)))
 
     //state for showing paypal modal
     const [showModal, setShowModal] = useState(false);
@@ -74,77 +74,83 @@ const Card = (props) => {
     }
     const touchFunc = () => touchSpecial();
 
-    if (props.isParent === true) {
-        return (
-            <OnImagesLoaded
-            onLoaded={() => setLoaded(true)}
-        >
-            <animated.div style={fade} className="parent-container">
+    // if (props.isParent === true) {
+    //     return (
+    //         <OnImagesLoaded
+    //         onLoaded={() => setLoaded(true)}
+    //     >
+    //         <animated.div style={fade} className="parent-container">
             
-            <motion.div onHoverStart={() => setBody(true)} onHoverEnd={hoverFunc} className="image-container">
+    //         <motion.div onHoverStart={() => setBody(true)} onHoverEnd={hoverFunc} className="image-container">
                 
-                <motion.div onTap={touchFunc}>
-                    {loaded ? <img className="image" src={props.image}  style={{width: props.width}, {height: props.height}} alt="reload this page to load the image"/> : <Spinner animation="border" variant="outline-info" />}
-                </motion.div>
+    //             <motion.div onTap={touchFunc}>
+    //                 {loaded ? <img className="image" src={props.image}  style={{width: props.width}, {height: props.height}} alt="reload this page to load the image"/> : <Spinner animation="border" variant="outline-info" />}
+    //             </motion.div>
              
-            {(body && loaded) ? 
-                <motion.div animate={{ y: 180 }} className="body-container">
-                    <div className="title-area">
-                        <h2>{props.title}</h2>
-                    </div>
-                    <h3 className="date">{props.childArray.length} items created {props.childArray[0].date} to {props.childArray[props.childArray.length-1].date}</h3>
-                    <Button id="buy-button" variant="outline-info" size="lg" onClick={showMod}>view</Button>
-                </motion.div>
+    //         {(body && loaded) ? 
+    //             <motion.div animate={{ y: 180 }} className="body-container">
+    //                 <div className="title-area">
+    //                     <h2>{props.title}</h2>
+    //                 </div>
+    //                 <h3 className="date">{props.childArray.length} items created {props.childArray[0].date} to {props.childArray[props.childArray.length-1].date}</h3>
+    //                 <Button id="buy-button" variant="outline-info" size="lg" onClick={showMod}>view</Button>
+    //             </motion.div>
 
-                : 
+    //             : 
 
-                <span></span>
-            }
+    //             <span></span>
+    //         }
 
-            <Modal show={showModal} onHide={hideMod} size="lg">
-                <Modal.Header closeButton>
-                    <Modal.Title>{props.title}</Modal.Title> 
-                </Modal.Header>
-                        <div className="main-container">
-                        {
-                            props.childArray.map((card, key) => {
-                                return <Child
-                                    id={key}
-                                    image={card.image}
-                                    title={card.title}
-                                    date={card.date}
-                                    description={card.description}
-                                    price={card.price}
-                                    isParent={card.isParent}
-                                    isChild={card.isChild}
-                                    width={card.width}
-                                    childArray={card.childArray}
-                                    />
-                                }
-                            )
-                        }
-                    </div>
-                <Modal.Footer>
-                    <Button variant="danger" onClick={hideMod}>
-                        cancel
-                    </Button>
-                </Modal.Footer>
-            </Modal>
+    //         <Modal show={showModal} onHide={hideMod} size="lg">
+    //             <Modal.Header closeButton>
+    //                 <Modal.Title>{props.title}</Modal.Title> 
+    //             </Modal.Header>
+    //                     <div className="main-container">
+    //                     {
+    //                         props.childArray.map((card, key) => {
+    //                             return <Child
+    //                                 id={key}
+    //                                 image={card.image}
+    //                                 title={card.title}
+    //                                 date={card.date}
+    //                                 description={card.description}
+    //                                 price={card.price}
+    //                                 isParent={card.isParent}
+    //                                 isChild={card.isChild}
+    //                                 width={card.width}
+    //                                 childArray={card.childArray}
+    //                                 />
+    //                             }
+    //                         )
+    //                     }
+    //                 </div>
+    //             <Modal.Footer>
+    //                 <Button variant="danger" onClick={hideMod}>
+    //                     cancel
+    //                 </Button>
+    //             </Modal.Footer>
+    //         </Modal>
                 
-            </motion.div>
-        </animated.div>
-        </OnImagesLoaded>
-        )
+    //         </motion.div>
+    //     </animated.div>
+    //     </OnImagesLoaded>
+    //     )
+    // }
+
+    // if (props.isChild===true){
+    //     return null;
+    // }
+
+    const randomLoad = async () => {
+        setTimeout(() => setLoaded(true), Math.random(5000, 2000))
     }
 
-    if (props.isChild===true){
-        return null;
-    }
+
+    useEffect(() => {
+        randomLoad()
+    })
 
     return (
-        <OnImagesLoaded
-            onLoaded={() => setLoaded(true)}
-        >
         <animated.div style={fade} className="total-container">
             
             <motion.div onHoverStart={() => setBody(true)} onHoverEnd={hoverFunc} className="image-container">
@@ -156,7 +162,7 @@ const Card = (props) => {
             {(body && loaded) ? 
                 <motion.div animate={{ y: 180 }} className="body-container">
                     <div className="title-area">
-                        <h1>{props.title}</h1>
+                        <h2 style={{ fontSize: font }}>{props.title}</h2>
                     </div>
                     <h3 className="date">{props.date}</h3>
 
@@ -182,7 +188,6 @@ const Card = (props) => {
                 
             </motion.div>
         </animated.div>
-        </OnImagesLoaded>
     )
 }
 

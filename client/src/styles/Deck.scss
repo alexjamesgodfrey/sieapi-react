@@ -1,11 +1,15 @@
-$barrier: 728px;
+$barrier: 850px;
+@use "sass:math";
 
 .main-container {
   margin-top: 20px;
   width: 100%;
-  display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+
+  @media screen and (min-width: $barrier) {
+    width: calc(100% - 130px);
+    margin-left: 130px;
+  }
 }
 
 .info-toast {

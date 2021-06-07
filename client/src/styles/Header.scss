@@ -1,23 +1,24 @@
+@import "./custom.scss";
 $barrier: 850px;
 
 #flex-column {
-    padding-top: 20px;
+  padding-top: 20px;
 
-    @media screen and (min-width: $barrier) {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 25px;
-        left: 10px;
-    }
-    
+  @media screen and (min-width: $barrier) {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 45px;
+    left: 10px;
+  }
 }
 
-.header-container {
-    width: 100px;
-    min-width: 100px;
+.header-link {
+  text-decoration: none !important;
+  transition: 0.2s;
+}
 
-    @media screen and (max-width: $barrier) {
-        width: 100%;
-    }
+.header-link:hover {
+  transition: 0.2s;
+  color: $font-color;
 }

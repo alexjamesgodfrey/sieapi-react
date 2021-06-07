@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useAuth } from './contexts/AuthContext.js';
 import { useHistory } from 'react-router-dom';
 import { Form, Button, Alert } from 'react-bootstrap';
@@ -137,7 +138,7 @@ export default function Admin() {
                 </div>
             }
             {mode === 'delete' &&
-                <div className="d-flex">
+                <div className="d-flex flex-wrap">
                     {works.map((w, key) => {
                         return (
                             <SmallWork work={w} reload={getWorks} />
@@ -145,7 +146,8 @@ export default function Admin() {
                     })}
                 </div>
             }
-            <h3 id="forgot-link" onClick={handleLogout} style={{ marginTop: '50px' }}>logout</h3>
+            <Link to="/"><h3 style={{ marginTop: '50px', textDecoration: 'none' }}>go home</h3></Link>
+            <a><h3 onClick={handleLogout} style={{cursor: 'pointer' }}>logout</h3></a>
             </div>
         </div>
     )

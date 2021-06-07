@@ -48,10 +48,8 @@ const Home = () => {
 
     return(
         <div className="total">
-            <div className="main">
-                <Header />
-                <Deck arr={fetchArray}/>
-            </div>
+            <Header />
+            <Deck arr={fetchArray}/>
         </div>
     )
 }
