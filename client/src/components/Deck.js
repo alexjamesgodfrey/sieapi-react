@@ -30,7 +30,7 @@ const Deck = (props) => {
 
     return (
         <div>
-            <h1>aspen by sierra apicella</h1>
+            <h1><span className="font-color">aspen</span> by sierra apicella | 01-21 - present</h1>
             <div className="d-flex main-container">
             <div className="d-flex flex-wrap justify-content-center" style={{ margin: '0px auto'}}>
                 <div>

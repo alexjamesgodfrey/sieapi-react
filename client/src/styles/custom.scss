@@ -6,4 +6,8 @@ $theme-colors: (
   "warning": $font-color,
 );
 
+.font-color {
+  color: $font-color;
+}
+
 @import "~bootstrap/scss/bootstrap";
