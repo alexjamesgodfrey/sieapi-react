@@ -3,7 +3,7 @@ import "../styles/Footer.scss";
 
 const Footer = () => {
     return (
-        <p className='footer'>log in as <Link className="footer-link" to="/admin">admin</Link></p>
+        <p className='footer'>made with ♥️ by Alex Godfrey. <a target="blank" href="https://github.com/agod1373/sieapi-react">get a website like this</a></p>
     )
 }
 

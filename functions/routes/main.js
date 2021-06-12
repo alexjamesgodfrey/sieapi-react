@@ -27,6 +27,18 @@ module.exports = function (app) {
         }
     })
 
+    app.put('/api/editwork/:id', async (req, res) => {
+        try {
+            const { id } = req.params
+            const { image, title, date, description, price, sold } = req.body
+            const resp = await pool.query("UPDATE sierra SET image=$1, title=$2, date=$3, description=$4, price=$5, sold=$6 WHERE id=$7",
+                [image, title, date, description, price, sold, id]);
+            res.json(resp);
+        } catch (err) {
+            console.error(err.message)
+        }
+    })
+
     app.delete('/api/deletework/:id', async (req, res) => {
         try {
             const { id } = req.params;

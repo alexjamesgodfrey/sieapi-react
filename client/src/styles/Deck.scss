@@ -1,5 +1,6 @@
 @import "./custom.scss";
 $barrier: 850px;
+$barrier-2: 1585px;
 @use "sass:math";
 
 .main-container {
@@ -44,4 +45,19 @@ $barrier: 850px;
 
 h1 {
   text-align: center;
+}
+
+.big-columns {
+  @media screen and (max-width: $barrier-2) {
+    display: none;
+  }
+}
+
+.small-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @media screen and (min-width: $barrier-2) {
+    display: none;
+  }
 }

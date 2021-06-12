@@ -14,6 +14,9 @@ const Header = () =>  {
                 <Link to="/commission" className="header-link"><Nav.Link href="/commission"><span className="header-link">commission</span></Nav.Link></Link>
             </Nav.Item>
             <Nav.Item as="li">
+                <Link to="/about" className="header-link"><Nav.Link href="/about"><span className="header-link">about</span></Nav.Link></Link>
+            </Nav.Item>
+            <Nav.Item as="li">
                 <Link className="header-link" to="/admin"><Nav.Link className="header-link fade-in" href="/admin"><span className="header-link">admin</span></Nav.Link></Link>
             </Nav.Item>
             {/* <Nav.Item as="li">

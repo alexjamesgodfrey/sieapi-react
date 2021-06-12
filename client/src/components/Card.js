@@ -46,14 +46,6 @@ const Card = (props) => {
     
     const fade = useSpring({ opacity: 1, from: { opacity: 0 } });
 
-    const opppositeBody = () => {
-        if (body === true) {
-            setBody(false);
-        } else {
-            setBody(true);
-        }
-    }
-
     const hoverSpecial = () => {
         if (tapped === false) {
             setBody(false);
@@ -148,15 +140,23 @@ const Card = (props) => {
 
     useEffect(() => {
         randomLoad()
+        console.log(props.sold)
     })
 
     return (
         <animated.div style={fade} className="total-container">
             
-            <motion.div onHoverStart={() => setBody(true)} onHoverEnd={hoverFunc} className="image-container">
+            <motion.div className="image-container">
                 
                 <motion.div onTap={touchFunc}>
-                    {loaded ? <img className="image" src={props.image} alt="reload this page to load the image"/> : <Spinner animation="border" variant="outline-info" />}
+                    {loaded ?
+                        <div>
+                            {props.sold && <Button variant="danger" style={{ position: 'absolute' }}>Sold</Button>}
+                            <img className="image" src={props.image} alt="reload this page to load the image" />
+                        </div>
+                        :
+                        <Spinner animation="border" variant="outline-info" />
+                    }
                 </motion.div>
              
             {(body && loaded) ? 
@@ -165,10 +165,9 @@ const Card = (props) => {
                         <h2 style={{ fontSize: font }}>{props.title}</h2>
                     </div>
                     <h3 className="date">{props.date}</h3>
-
-                    <h6 className="description">0 / 1 sold</h6>
-
-                    <Button id="buy-button" variant="outline-info" size="md" onClick={showMod}>buy ${props.price}</Button>
+                    {!props.sold && <h6 className="description">0 / 1 sold</h6>}
+                    {props.sold && <h6 className="description">1 / 1 sold</h6>}
+                    <Button disabled={props.sold} id="buy-button" variant="outline-info" size="md" onClick={showMod}>buy ${props.price}</Button>
                 </motion.div>
 
                 : 

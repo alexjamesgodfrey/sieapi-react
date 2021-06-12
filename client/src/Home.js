@@ -13,9 +13,13 @@ const Home = () => {
     const [fetchArray, setFetchArray] = useState([]);
 
     const getRegulars = async () => {
-        const arr = await fetch('/api/works');
-        const arrJson = await arr.json();
-        setFetchArray(arrJson);
+      const arr = await fetch('/api/works');
+      const arrJson = await arr.json();
+      let shuffled = arrJson
+        .map((a) => ({sort: Math.random(), value: a}))
+        .sort((a, b) => a.sort - b.sort)
+        .map((a) => a.value)
+      setFetchArray(shuffled);
     }
 
     useEffect(() => {
