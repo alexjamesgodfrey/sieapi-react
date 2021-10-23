@@ -13,41 +13,43 @@ const Home = () => {
     const [fetchArray, setFetchArray] = useState([]);
 
     const getRegulars = async () => {
-      const arr = await fetch('/api/works');
-      const arrJson = await arr.json();
-      let shuffled = arrJson
-        .map((a) => ({sort: Math.random(), value: a}))
-        .sort((a, b) => a.sort - b.sort)
-        .map((a) => a.value)
-      setFetchArray(shuffled);
+      await fetch('/api/works')
+      .then(response => response.json())
+      .then(data => {
+        let shuffled = data
+          .map((a) => ({sort: Math.random(), value: a}))
+          .sort((a, b) => a.sort - b.sort)
+          .map((a) => a.value)
+          setFetchArray(shuffled)
+      })
     }
 
     useEffect(() => {
         getRegulars();
     }, [])
 
-    const objectFactory = ( image, title, date, description, price, isParent, isChild, width, childArray ) => {
-        return {
-          image: image,
-          title: title,
-          date: date,
-            description: description,
-          price: price,
-          isParent: isParent,
-            isChild: isChild,
-          width: width,
-          childArray: childArray
-        }
-    }
+    // const objectFactory = ( image, title, date, description, price, isParent, isChild, width, childArray ) => {
+    //     return {
+    //       image: image,
+    //       title: title,
+    //       date: date,
+    //         description: description,
+    //       price: price,
+    //       isParent: isParent,
+    //         isChild: isChild,
+    //       width: width,
+    //       childArray: childArray
+    //     }
+    // }
     
-    const motherArray = [
-    objectFactory(mother1, 'bluebells', '04.02.21', 'blank desc', 15, false, true),
-    objectFactory(mother2, 'roses', '04.04.21', 'blank desc', 15, false, true),
-    objectFactory(mother3, 'carnation', '04.04.21', 'blank desc', 15, false, true),
-    objectFactory(mother4, 'motley', '04.05.21', 'blank desc', false, 15, false, true),
-    objectFactory(mother5, 'lilac', '04.07.21', 'blank desc', false, 15, false, true),
-    objectFactory(mother6, 'blue orchid', '04.07.21', 'blank desc', 15, false, true)
-    ]
+    // const motherArray = [
+    // objectFactory(mother1, 'bluebells', '04.02.21', 'blank desc', 15, false, true),
+    // objectFactory(mother2, 'roses', '04.04.21', 'blank desc', 15, false, true),
+    // objectFactory(mother3, 'carnation', '04.04.21', 'blank desc', 15, false, true),
+    // objectFactory(mother4, 'motley', '04.05.21', 'blank desc', false, 15, false, true),
+    // objectFactory(mother5, 'lilac', '04.07.21', 'blank desc', false, 15, false, true),
+    // objectFactory(mother6, 'blue orchid', '04.07.21', 'blank desc', 15, false, true)
+    // ]
 
 
     return(
